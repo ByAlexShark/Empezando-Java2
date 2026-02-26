@@ -1,13 +1,22 @@
-document.getElementById('sumarBtn').addEventListener('click', function () {
-  const num1 = parseFloat(document.getElementById('num1').value);
-  const num2 = parseFloat(document.getElementById('num2').value);
-  const resultado = num1 + num2;
-  document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+import { sumar, multiplicar } from "./sumador.js";
+
+const num1Input = document.getElementById("num1");
+const num2Input = document.getElementById("num2");
+const resultado = document.getElementById("resultado");
+
+const sumarBtn = document.getElementById("sumarBtn");
+const multiplicarBtn = document.getElementById("multiplicarBtn");
+
+sumarBtn.addEventListener("click", () => {
+  const a = Number(num1Input.value);
+  const b = Number(num2Input.value);
+
+  resultado.textContent = sumar(a, b);
 });
 
-document.getElementById('multiplicarBtn').addEventListener('click', function () {
-  const num1 = parseFloat(document.getElementById('num1').value);
-  const num2 = parseFloat(document.getElementById('num2').value);
-  const resultado = num1 * num2;
-  document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+multiplicarBtn.addEventListener("click", () => {
+  const a = Number(num1Input.value);
+  const b = Number(num2Input.value);
+
+  resultado.textContent = multiplicar(a, b);
 });
